@@ -1,0 +1,23 @@
+extends layout
+
+block Contenido
+    section.MiCuenta 
+        h2  Mis Datos
+        
+        .OpcionesCuenta
+            form(method="POST")
+                div.Campo 
+                    label(for="Nombre") Nombre:
+                    input(type="text" name="Nombre" placeholder="Tu Nombre") 
+                div.Campo 
+                    label(for="Email") Email:
+                    input(type="Email" name="Email" placeholder="Tu Email")
+                
+                div.Campo 
+                    label(for="Contraseña") Contraseña:
+                    input(type="password" name="Contraseña" placeholder="Tu Contraseña")
+                div.Campo 
+                    label(for="Contraseña") Nueva Contraseña:
+                    input(type="password" name="ContraseñaNueva" placeholder="Tu Contraseña Nueva")
+ 
+

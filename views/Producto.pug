@@ -1,0 +1,66 @@
+extends layout
+
+
+block Contenido
+
+    section.SeccionTarta
+        .Contenedor.ContenedorProducto(data-id=Producto.Id)
+            .Imagen
+                i#Back.Invisible.fa.fa-angle-left
+                .ContenedorCajas
+                    .CajaImagen
+                        img.ImagenProducto.SliderImg.show(data-id='1' src=`/Img/Tartas/${Producto.Imagen}/${Producto.Imagen}.jpg` alt=Producto.Titulo)
+                    .CajaImagen
+                        img.SliderImg(data-id='2' src=`/Img/Tartas/${Producto.Imagen}/${Producto.Imagen}2.jpg` alt=Producto.Titulo)
+                    .CajaImagen
+                        img.SliderImg(data-id='3' src=`/Img/Tartas/${Producto.Imagen}/${Producto.Imagen}3.jpg` alt=Producto.Titulo)
+                i#Next.fa.fa-angle-right
+                // Fin Div Imagen
+            .InformacionTarta
+                .PrecioNombre
+                    h2.ProductoNombre.NombreTarta= Producto.Titulo
+                    p.PrecioProducto.Precio $
+                        span= Producto.Precio
+                .Compra
+                    .Cantidad
+                        label(for='Cantidad') Cantidad:
+                        input#Cantidad.InputCantidad.CantidadCarrito(type='number' name='Cantidad' min='1' value="1")
+                      
+                    .AgregarCarrito
+                        button#AgregarCarrito.Boton.BtnCarrito(name='BtnAccion' type='button' value='Agregar')
+                            span Agregar Al Carrito
+                p.Descripcion= Producto.Descripcion
+
+            .ImgChiquita
+                #ImgChica1.BackgroundImg.Activo
+                    img(href='#' src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}.jpg` alt=Producto.Titulo)
+                #ImgChica2.BackgroundImg
+                    img(href='#' src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}2.jpg` alt=Producto.Titulo)
+                #ImgChica3.BackgroundImg
+                    img(src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}3.jpg` alt=Producto.Titulo)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    section.Seccion.SeccionMas
+        .Contenedor
+            h2 Tartas Relacionadas
+            .Carrusel
+                i#Back.Back.fa.fa-angle-left
+                .ContenedorProductos.RelacionadoProductos
+                    if(productos.length)
+                        each Productos in productos
+                            .Producto
+                                img(src=`/Img/Tartas/${Productos.Imagen}/${Productos.Imagen}.jpg` alt='Tarta')
+                                h3= Productos.Titulo
+                                p= Productos.Descripcion
+                                a.Boton.Invisible(href='#')
+                                    span  Ver Producto 
+                    
+                i#Next.Next.fa.fa-angle-right

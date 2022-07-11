@@ -1,0 +1,93 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='/css/all.min.css')
+  link(href='https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap' rel='stylesheet')
+  link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.css")
+  title= NombrePagina
+header.Header(class=Pagina)
+  div(class=Header)
+    .Barra(class=Pagina != 'index' ? 'BarraCom' : '')
+      a(href='/')
+        h1 HecemiTodoDulce
+      i(class="fa-solid fa-bars MenuMostrar")
+      nav.MenuNavegacion
+        if(locals.usuario.id)
+          include partials/nav-autenticado.pug
+        else 
+          include partials/nav-noautenticado.pug
+        a.menulink.Btncarrito(href='')
+          i.BotonCarrito.fa.fa-shopping-cart
+            span.CantidadProductos 0
+    .Carrito
+          i.fa.fa-circle-xmark.CerrarCarrito
+          .CarritoContenido.CarritoDiv 
+          .CarritoTotal
+            p.SubTotal SubTotal: $0
+          .VerCarritoDiv
+            a.verCarrito(href="/carrito") Ver Carrito 
+
+    if(Pagina == 'index')        
+      h1.Titulo Exquisitas Tartas Dulces Para Compartir En Familia
+    
+  if(locals.mensajes)
+    .alertas
+      each Categoria in Object.keys(locals.mensajes)
+        each alerta in locals.mensajes[Categoria]
+          p(class=`${Categoria} alerta`)= alerta 
+block Contenido
+
+    
+footer.Footer.Seccion
+  .ContenedorInfo
+    .ElementosFooter.RedesSociales
+      h3
+        | Redes 
+        span Sociales
+      nav.RedesSocialesNav
+        a.BotonWhatsapp(href='#')
+          i.fab.fa-whatsapp
+        a.BotonInstagram(href='#')
+          i.fab.fa-instagram
+        a.BotonFacebook(href='#')
+          i.fab.fa-facebook-square
+    .ElementosFooter.InformacionTienda
+      h3
+        | Informacion de la 
+        span Tienda
+      p Presidente Peron 775 Villa Rosa
+      p Email:hecemitododulce@gmail.com
+    .ElementosFooter.MediosDePagos
+      h3
+        | Medios de 
+        span Pagos
+      .ContenedorPagos
+        p
+          i.fas.fa-money-bill-wave
+          |  Efectivo
+        p
+          i.far.fa-credit-card
+          |  Credito/Debito
+        p
+          i.fas.fa-university
+          | Transferencia
+  p.ParrafoFooter Todos los derechos Reservados a HecemiTodoDulce 2021.
+script(src='/dist/bundle.js')
+script(type='text/javascript' src='/js/Carrusel.js')
+
+
+script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+script.
+  window.jQuery || document.write('<script src="../../JavaScript/vendor/jquery-3.4.1.min.js"><\\/script>')
+
+// Google Analytics: change UA-XXXXX-Y to be your site's ID.
+script.
+  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+script(src='https://www.google-analytics.com/analytics.js' async='')
+script(src='https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js')
+

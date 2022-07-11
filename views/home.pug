@@ -1,0 +1,89 @@
+extends layout
+
+
+block Contenido
+    section.Seccion.SeccionNosotros
+        .Contenedor.ContenedorSobreNosotros
+            .ImagenesNosotros.Back
+                img.Img1(src='/img/Tartas/LemonPie/LemonPie2.jpg' alt='Lemon Pie')
+                img.Img2(src='/img/Tartas/TartaDeFrutilla/TartaDeFrutilla3.jpg' alt='Tarta de Frutilla')
+            .SobreNosotros
+                h2.BordeIndex.Animacion Sobre Nosotros
+                p Aqui en HecemiTodoDulce vas a Conocer los Placeres Inimaginables al Probar cualquiera de Nuestrar Tartas.Prueba La tarta de frutilla, Si quieres revivir aquel Verano que no olvidas o Prueba la Tarta Toffi En esos dias donde Pinta el Bajon!!
+                p Donde Sea que estes es un Buen Momento para probar Nuestras Tartas
+   
+    section.Seccion.Tartas
+        h2 Algunas De Nuestras Tartas Dulces
+      
+        .ContenedorTartas
+            .Contenedor.ContenedorProductos
+                if(productos.length)
+                    each Producto in productos
+                        .Producto
+                            .ImagenOjo 
+                                img(src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}.jpg` alt='')
+                                a(class="Invisible OjoProducto" href=`/Tienda/${Producto.Imagen}`)
+                                    i(class="fa fa-eye")     
+                            h3= Producto.Titulo
+                            p= Producto.Descripcion
+     
+        // Fin de Productos
+    
+    section.Seccion.Tortas
+        h2 Algunos De Nuestras Tortas Dulces
+        .ContenedorTortas
+            .Contenedor.ContenedorProductos
+                .Producto
+                    img(src='Imagenes/Tortas/Torta dulce y chocolate DULCE.jpg' alt='Torta de Argentina')
+                    h3 Torta De Chocolate
+                    p La tarta De Frutilla Es una tarta extraordinaria que deleitara tu paladar,especial para esos dias de Calor.Esta compuesta por una Masa base,rellena de frutillas y Gelatina,dandole una textura increible.
+                    a(class="OjoProducto" href="/Tienda/TartaDeFrutilla")
+                        i(class="fa fa-eye")
+                .Producto
+                    img(src='Imagenes/Tortas/Torta dulce y chocolate DULCE.jpg' alt='Torta de Argentina')
+                    h3 Torta De Chocolate
+                    p La tarta De Frutilla Es una tarta extraordinaria que deleitara tu paladar,especial para esos dias de Calor.Esta compuesta por una Masa base,rellena de frutillas y Gelatina,dandole una textura increible.
+                    a.Boton.Invisible(href='#')
+                        span  Ver Producto
+                .Producto
+                    img(src='Imagenes/Tortas/Torta dulce y chocolate DULCE.jpg' alt='Torta de Argentina')
+                    h3 Torta De Chocolate
+                    p La tarta De Frutilla Es una tarta extraordinaria que deleitara tu paladar,especial para esos dias de Calor.Esta compuesta por una Masa base,rellena de frutillas y Gelatina,dandole una textura increible.
+                    a.Boton.Invisible(href='#')
+                        span  Ver Producto 
+                        
+            
+    section.Seccion
+        .ContenedorPantalla.parallax.BackgroundPantalla
+            .Contenedor.ContenedorTexto
+                h2 Deleita Tu Paladar con las Mejoras Tartas De Todo Villa Rosa
+
+
+
+
+    section.Seccion.Info
+        h2 Informacion Importante
+        .Contenedor.ContInfoTortas
+            .InformacionDiv
+                .Borde
+                    p Envios a Todo Villa Rosa.
+                        i.fas.fa-truck
+            .InformacionDiv
+                .Borde
+                    p Productos de Gran Calidad. 
+                        i.fas.fa-star   
+            .InformacionDiv
+                .Borde
+                    p Aceptamos Pagos Por MercadoPago. 
+                        i.fas.fa-handshake 
+
+                
+    section.Seccion.NewsLetter
+        .Background
+            .Contenedor.ContenedorLetter
+                h2 Suscribete a HecemiTodoDulce!!
+                form(action='#')
+                    .FormElement
+                        input#Email(type='text' name='Email' placeholder='Email')
+                        button.Boton(type='submit')
+                            span Suscribirse

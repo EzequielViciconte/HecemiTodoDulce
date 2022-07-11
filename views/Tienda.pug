@@ -1,0 +1,23 @@
+extends layout
+
+block Contenido
+  
+
+  main.Tienda
+    h2 Nuestros Productos
+    .Contenedor.ContenedorProductos
+      if(productos.length)
+        each Producto in productos 
+          .Productos(data-id=`${Producto.Id}`)
+            .ImgProducto
+              a.OjoProducto(href=`/Tienda/${Producto.Imagen}`)
+                i.fa.fa-eye
+              a(href=`/Tienda/${Producto.Imagen}`) 
+                img.ImagenProducto(src=`/img/Tartas/${Producto.Imagen}/${Producto.Imagen}.jpg`)
+            .ContenidoProducto
+                p.ProductoNombre= Producto.Titulo
+                p.PrecioProducto $
+                  span= Producto.Precio
+                
+                button.Boton.BtnProductos(name='BtnAccion' type='submit' value='Agregar' href='#')
+                  span.span Agregar al Carrito

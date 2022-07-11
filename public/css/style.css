@@ -1,0 +1,1745 @@
+:root {
+    --FuentePrincipal: 'Imperial Script', cursive;
+    --FuenteSecundaria: 'Amatic SC', cursive;
+    --ColorPrincipal: rgb(255, 0, 191);
+    --Azul: #9966cc;
+    --RosaClaro: #ffb7b2;
+}
+
+body {
+    margin: 0;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 168, 240, 1) 100%, rgba(255, 0, 211, 1) 100%);
+    line-height: 1.8rem;
+    font-family: var(--FuenteSecundaria);
+    font-weight: 800;
+}
+
+
+/*Globales*/
+
+a,li,ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+.Seccion {
+    margin-top: 10rem;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.Acciones
+{
+    display: flex;
+    justify-content: center;
+    margin: 0 22rem;
+}
+
+
+
+/*Formulario Default*/
+
+.CrearCuenta {
+    margin-bottom: 5rem;
+}
+
+.default-form {
+    background-color: var(--Azul);
+    padding: 5rem 5rem;
+    border-radius: 2.5rem;
+    width: 50rem;
+    margin: 0 auto;
+    -webkit-box-shadow: 1px 7px 31px 5px rgba(153,102,204,0.77); 
+    box-shadow: 1px 7px 31px 5px rgba(153,102,204,0.77);
+}
+
+.TipoDeFormulario{
+    text-align: center;
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+.Campo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0rem;
+}
+
+.Campo Input {
+    width: 33rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.Campo label {
+    font-size: 2rem
+}
+
+.left {
+    justify-content: flex-end;
+}
+.Acciones a {
+    font-size: 1.5rem;
+}
+
+
+/*Boton*/
+
+.Boton {
+    padding: .5rem 2rem;
+    border-radius: 5px;
+    position: relative;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 0rem 1rem;
+    background-color: var(--Azul);
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .4s ease-in-out all;
+    font-family: var(--FuenteSecundaria);
+}
+
+.Boton span {
+    position: relative;
+    z-index: 2;
+    transition: .4s ease-in-out all;
+}
+
+.Boton:hover::before {
+    transform: scale(400);
+    background: var(--ColorPrincipal);
+}
+
+.Boton:before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: none;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    border-radius: .5px;
+    transition: 1s cubic-bezier(0.4, 0, 1, 1) all;
+    transform-origin: center;
+}
+
+.BtnRosa {
+    background-color: var(--ColorPrincipal);
+}
+
+.BtnRosa:hover::before {
+    background: var(--Azul);
+}
+
+img {
+    width: 100%;
+}
+
+h2 {
+    font-family: var(--FuentePrincipal);
+    text-align: center;
+    font-size: 3rem;
+}
+
+.Contenedor {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+/*******  Pagina Principal  *******/
+
+/*Header*/
+
+.index {
+    background-image: url('../img/FondoHeader.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 45rem;
+    background-position: 0px 0px;
+}
+
+.ContenedorHeader {
+    display: flex;
+    flex-direction: column;
+    height: 45rem;
+    background-color: rgba(10, 10, 10, 0.267);
+}
+
+
+/*Barra*/
+.Barra {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.BarraInicio {
+    background-color: rgba(10, 10, 10, 0.459);
+}
+
+.BarraCom {
+    background-color: var(--Azul);
+}
+
+.Barra h1 {
+    color: white;
+    font-size: 3rem;
+    margin: 2rem 1rem;
+    font-family: var(--FuentePrincipal);
+    color: var(--ColorPrincipal);
+}
+
+.MenuMostrar{
+    font-size: 2rem;
+    color: white;
+}
+
+.MenuNavegacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 1s;
+    margin-top: 1rem;
+    transform: translateY(-24rem);
+}
+
+.MenuNavegacion .menulink {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.Submenu{
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    padding: 20px;
+    transition: opacity 1s;
+}
+
+ li:hover .Submenu{
+    opacity: 100;
+    transition: opacity .5s;
+}
+.Submenu li a{
+    color:white;
+    font-size: 2rem;
+}
+
+.MenuNavegacion a:hover {
+    color: #d6249f;
+    transition: all .5s;
+}
+
+.Titulo {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 1rem auto;
+    width: 93%;
+    line-height: 3rem;
+    color: white;
+    font-family: var(--FuenteSecundaria);
+}
+
+
+
+@media only screen and (min-width:728px){
+
+    .Barra h1 {
+        color: white;
+        font-size: 4rem;
+        margin: 2rem 1rem;
+        font-family: var(--FuentePrincipal);
+        color: var(--ColorPrincipal);
+    }
+
+    .Titulo {
+        font-size: 4.5rem;
+        text-transform: uppercase;
+        margin: 1rem 4rem;
+        width: 70%;
+        color: white;
+        font-family: var(--FuenteSecundaria);
+        line-height: 4rem;
+    }
+}
+
+
+@media only screen and (min-width:1024px){
+    .ContenedorHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 45rem;
+        background-color: rgba(10, 10, 10, 0.267);
+    }
+    
+    
+    /*Barra*/
+    
+    .Barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 1.5rem;
+        flex-direction: row;
+    }
+    
+    .BarraInicio {
+        background-color: rgba(10, 10, 10, 0.459);
+    }
+    
+    .BarraCom {
+        background-color: var(--Azul);
+    }
+    
+    .Barra h1 {
+        color: white;
+        font-size: 4rem;
+        margin: 2rem 1rem;
+        font-family: var(--FuentePrincipal);
+        color: var(--ColorPrincipal);
+    }
+
+    .MenuMostrar{
+        display: none!important;
+    }
+
+
+    .MenuNavegacion {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transition: transform 1s;
+        margin-top: 1rem;
+        transform: translate(0);
+    }
+    
+    .MenuNavegacion .menulink {
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+        padding: 0rem 2rem;
+    }
+    
+    .MenuNavegacion a:hover {
+        color: #d6249f;
+        transition: all .5s;
+    }
+    
+    .Titulo {
+        font-size: 5.2rem;
+        text-transform: uppercase;
+        margin: 15rem 4rem;
+        width: 50%;
+        color: white;
+        font-family: var(--FuenteSecundaria);
+        line-height: 8rem;
+    }
+}
+/*FinHEADER*/
+
+
+
+
+/********   SobreNosotros   ********/
+
+.Animacion::before {
+    content: '';
+    border-bottom: 2px solid #d6249f;
+    position: absolute;
+    animation-name: Borde;
+    animation-timing-function: cubic-bezier(0.22, -0.24, 0.91, 0.53);
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.BordeIndex::before {
+    top: 3rem;
+    max-width: 18rem;
+}
+
+
+
+.SeccionNosotros {
+    margin-top: 5rem;
+    position: relative;
+}
+
+
+.ImagenesNosotros{
+    margin-bottom: 9rem;
+}
+
+.Img1 {
+    width: 100%;
+    border-radius: 1rem;
+    -webkit-box-shadow: -1px 5px 26px -1px #FF2BE6;
+    box-shadow: -1px 5px 26px -1px #FF2BE6;
+}
+
+.Img2 {
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    top: 8rem;
+    left: 11rem;
+    -webkit-box-shadow: 6px 10px 27px -1px #524848;
+    box-shadow: 6px 10px 27px -1px #524848;
+}
+
+.SobreNosotros h2 {
+    font-size: 3.5rem;
+    position: relative;
+}
+
+.SobreNosotros p {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+}
+
+
+@media only screen and (min-width:728px){
+    .Img2 {
+        position: absolute;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 50%;
+        top: 11rem;
+        left: 23rem;
+        -webkit-box-shadow: 6px 10px 27px -1px #524848;
+        box-shadow: 6px 10px 27px -1px #524848;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    .ContenedorSobreNosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10rem;
+    }
+    
+    .ImagenesNosotros:hover .Img1 {
+        border-radius: 5rem;
+        -webkit-transform: scale(1.1);
+        transition: all 0.4s ease 0s;
+    }
+    
+    .ImagenesNosotros:hover .Img2 {
+        border-radius: 1rem;
+        -webkit-transform: scale(1.1);
+        transition: all 1s ease 0s;
+    }
+    
+    .Img1 {
+        width: 35rem;
+        border-radius: 1rem;
+        -webkit-box-shadow: -1px 5px 26px -1px #FF2BE6;
+        box-shadow: -1px 5px 26px -1px #FF2BE6;
+        transition: all 1s;
+    }
+    
+    .Img2 {
+        position: absolute;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        top: 7rem;
+        left: 25rem;
+        -webkit-box-shadow: 6px 10px 27px -1px #524848;
+        box-shadow: 6px 10px 27px -1px #524848;
+        transition: all 1s;
+    }
+    
+}
+
+/* Seccion Tartas */
+
+.Tartas h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: black;
+    padding: 1rem;
+    font-family: var(--FuentePrincipal);
+}
+
+.ContenedorTartas {
+    background-color: var(--Azul);
+    padding: 2rem;
+    -webkit-box-shadow: -1px 5px 26px -1px var(--Azul);
+    box-shadow: -1px 5px 26px -1px var(--Azul);
+}
+
+
+.ContenedorProductos h3 {
+    font-size: 2.2rem;
+    text-align: center;
+    border-bottom: 5px solid #FF2BE6;
+    border-radius: 1px;
+    padding-bottom: 1rem;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.ContenedorProductos p {
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+}
+
+.Producto {
+    transition: all .5s;
+    margin: 2rem 0rem;
+    position: relative;
+    background: inherit;
+    cursor: pointer;
+}
+
+.Producto .OjoProducto
+{
+    opacity: 1;
+}
+.Producto .OjoProducto i {
+    display: none;
+}
+
+.Producto img {
+    border-radius: 1rem;
+    transition: -webkit-transform 1s;
+    position: relative;
+}
+.Invisible {
+    display: none;
+}
+.Imagen .Invisible {
+    display: none;
+}
+
+
+
+@media only screen and (min-width:1024px){
+.ContenedorProductos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+
+
+
+.Producto {
+    transition: all .5s;
+    position: relative;
+    background: inherit;
+    cursor: pointer;
+}
+
+.Producto .OjoProducto
+{
+    opacity: 1;
+}
+.Producto .OjoProducto i {
+    display: block;
+}
+
+.Producto:hover {
+    -webkit-transform: scale(1.1);
+    transition: all .5s;
+}
+
+.Producto::before {
+    content: '';
+    transition: all 3s;
+}
+
+.Producto:hover::before {
+    content: '';
+    width: 103%;
+    height: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    top: -2px;
+    left: -4px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.Producto img {
+    border-radius: 1rem;
+    transition: -webkit-transform 1s;
+}
+.Invisible {
+    display: none;
+}
+.Imagen .Invisible {
+    display: none;
+}
+
+.Producto:hover .Invisible {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 16% 35%;
+    z-index: 1;
+}
+}
+
+
+/*Contenedor Pantalla*/
+
+.ContenedorPantalla {
+    position: relative;
+    height: auto;
+}
+
+.parallax::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.ContenedorPantalla::before {
+    content: '';
+    background-image: url('/img/TartasContenedor.jpg');
+    background-attachment: fixed;
+}
+
+.BackgroundPantalla {
+    background-color: #2a2a2a9b;
+    position: relative;
+}
+
+.ContenedorTexto {
+    position: relative;
+    text-align: center;
+}
+
+.ContenedorTexto h2 {
+    font-family: var(--FuenteSecundaria);
+    font-size: 4rem;
+    line-height: 8rem;
+    color: white;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width:728px){
+    .ContenedorTexto h2 {
+        font-size: 6rem;
+        line-height: 10rem;
+    }
+}
+@media only screen and (min-width:1024px){
+    .ContenedorTexto h2 {
+        font-size: 6rem;
+        line-height: 10rem;
+        width: 50%;
+    }
+}
+
+/*Informacion */
+.InformacionDiv {
+    background-color: var(--RosaClaro);
+    border-radius: 1rem;
+    margin: 2rem 0rem;
+    display: flex;
+    justify-content: center;
+}
+
+.Borde {
+    border: 1px solid #9966cc;
+    margin: .5rem;
+    border-radius: 10px;
+    width: 22.7rem;
+}
+
+.InformacionDiv p {
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.InformacionDiv p i {
+    font-size: 2.5rem;
+    padding-right: 1rem;
+}
+
+
+@media only screen and (min-width:728px){
+    .InformacionDiv {
+        margin: 2rem 10rem;
+    }
+}
+@media only screen and (min-width:1024px){
+    .ContInfoTortas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .InformacionDiv {
+        margin: 1rem 0rem;
+    }
+}
+
+
+
+/*Newsletter*/
+.NewsLetter {
+    background-image: url('/img/TartasDulcesNewsletter.jpg');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position-y: -3rem;
+}
+
+.Background {
+    background-color: rgba(31, 31, 31, 0.603);
+    height: 100%;
+}
+
+.ContenedorLetter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0rem;
+}
+
+.ContenedorLetter h2 {
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+    color: white;
+    line-height: 3rem;
+    position: relative;
+}
+
+.ContenedorLetter h2::before {
+    content: '';
+    position: absolute;
+    top: 6.5rem;
+    left: 0rem;
+    width: 100%;
+    border-bottom: 2px solid #d6249f;
+}
+
+.FormElement {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.FormElement input {
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    border: none;
+}
+
+@media only screen and (min-width:728px){ 
+    .ContenedorLetter h2::before {
+        top: 3rem;
+    }
+    .FormElement {
+        display: flex;
+        align-items: center;
+    }
+    .FormElement input {
+        padding: .5rem;
+        width: 45rem;
+    }
+}
+@media only screen and (min-width:1024px){ 
+
+    .FormElement {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .FormElement input {
+        margin-bottom: 0rem;
+    }
+}
+
+
+/*Footer*/
+.ContenedorInfo {
+    padding: 1rem;
+    background-color: black;
+}
+
+.ElementosFooter h3 {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    width: 70%;
+    margin: 2rem auto;
+    padding-bottom: 1.5rem;
+    border-bottom: 5px solid #FF2BE6;
+    border-radius: 2px;
+}
+
+.ElementosFooter h3 span {
+    color: #FF2BE6;
+}
+
+.ElementosFooter p {
+    color: white;
+    text-align: center;
+}
+
+.RedesSocialesNav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.RedesSocialesNav a i {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+.ContenedorPagos {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ContenedorPagos p {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+.ContenedorPagos p i {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.ContenedorPagos p i {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.BotonWhatsapp {
+    color: green;
+}
+
+.BotonInstagram {
+    color: #d6249f;
+}
+
+.BotonFacebook {
+    color: #3b5998;
+}
+
+.ParrafoFooter {
+    background-color: rgb(31, 31, 31);
+    margin: -1px;
+    font-size: 1.5rem;
+    padding: .5rem;
+    text-align: center;
+    color: white;
+}
+
+
+@media only screen and (min-width:728px){ 
+    .ContenedorInfo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background-color: black;
+    }
+}
+/*******  Pagina Principal FIN  *******/
+
+
+/***** Tienda *****/
+.ImgProducto img {
+    border-radius: 2rem;
+}
+
+.OjoProducto {
+    position: absolute;
+    top: 5rem;
+    left: 9.5rem;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.OjoProducto i {
+    font-size: 2.5rem;
+    padding: 1rem;
+    color: black;
+    background: white;
+    border-radius: 50%;
+}
+
+.ImgProducto:hover .OjoProducto {
+    opacity: 1;
+}
+
+.ImgProducto {
+    position: relative;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+
+
+.Productos .ContenidoProducto .ProductoNombre {
+    font-size: 2rem;
+    line-height: 3rem;
+    color: var(--Azul);
+}
+
+.PrecioProducto span {
+    font-size: 2.2rem;
+}
+
+.PrecioProducto {
+    font-size: 2.5rem;
+    color: var(--ColorPrincipal);
+}
+
+.ContenidoProducto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.BtnProductos {
+    margin: 1.5rem 0rem;
+    color: #631a8b;
+}
+
+
+
+
+
+@media only screen and (min-width:1024px){ 
+    .ImgProducto:hover {
+        transform: scale(1.1);
+    }
+    
+    .ImgProducto::before {
+        content: '';
+        transition: all .5s;
+    }
+    
+    .Productos .ImgProducto:hover::before {
+        content: '';
+        width: 100%;
+        height: 98%;
+        border-radius: 2rem;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+        background-color: rgba(255, 255, 255, .15);
+        backdrop-filter: blur(5px);
+        transition: all .5s;
+    }
+}
+
+/********** Fin Tienda  ************/
+
+
+/********  Producto  ********/
+.ContenedorProducto {
+    padding: 3rem 0rem;
+}
+
+.NombreTarta {
+    margin-top: -1rem;
+    display: flex;
+    font-family: var(--FuenteSecundaria);
+}
+
+.Precio {
+    margin: 3rem 0rem 3rem;
+}
+
+.Compra {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Cantidad {
+    padding-bottom: 1rem;
+    display: flex;
+}
+
+.Cantidad label {
+    font-size: 2.4rem;
+}
+
+.DivInputCantidad {
+    display: flex;
+}
+
+.InputCantidad {
+    width: 5rem;
+    border: none;
+    font-size: 20px;
+    padding: 7px;
+    border: .5px solid #bbbaba;
+}
+
+.Btn {
+    font-size: 20px;
+    padding: 7.9px 13px;
+    margin: 0;
+    margin-left: 5px;
+    border-radius: 0;
+}
+
+.Mas {}
+
+.BtnCarrito {
+    margin: 0rem;
+}
+
+.Descripcion {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
+
+/*Imagen Css*/
+
+.Imagen {
+    position: relative;
+    margin-bottom: 18rem;
+}
+
+.Imagen i {
+    z-index: 1;
+    font-size: 5rem;
+    color: rgb(160, 157, 157);
+    position: absolute;
+    cursor: pointer;
+}
+
+.Imagen i:first-child {
+    top: 4rem;
+}
+
+.Imagen i:last-child {
+    top: 4rem;
+    left: 18.5rem;
+}
+
+.Imagen img {
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+    border-radius: .5rem;
+}
+
+.Imagen .show {
+    opacity: 1;
+}
+
+.ImgChiquita {
+    display: flex;
+    margin-left: -1rem;
+    width: 60%;
+    position: absolute;
+    top: 41rem;
+}
+
+.BackgroundImg {
+    padding-left: 1rem;
+    position: relative;
+}
+
+.BackgroundImg::before {
+    content: '';
+    width: 80%;
+    height: 84%;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    transition: all .5s;
+}
+
+.BackgroundImg img {
+    border-radius: .5rem;
+}
+
+.Activo::before {
+    background: none;
+    backdrop-filter: blur(0px);
+}
+
+
+@media only screen and (min-width:1024px){ 
+    .ContenedorProducto {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 3rem 0rem;
+    }
+
+
+    .Imagen i:first-child {
+        top: 9rem;
+    }
+    
+    .Imagen i:last-child {
+        top: 9rem;
+        left: 34.5rem;
+    }
+
+    .ImgChiquita {
+        width: 41%;
+        top: 32rem;
+    }
+
+    .BackgroundImg {
+        padding-left: 1rem;
+        position: relative;
+    }
+    
+    .BackgroundImg::before {
+        content: '';
+        width: 92%;
+        height: 93%;
+        border-radius: 0.5rem;
+        position: absolute;
+        top: 0px;
+        left: 15px;
+        box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+        background-color: rgba(255, 255, 255, .15);
+        backdrop-filter: blur(5px);
+        transition: all .5s;
+    }
+    
+    .Activo::before {
+        background: none;
+        backdrop-filter: blur(0px);
+    }
+
+}
+
+
+
+
+/***** Carrito Minimizable *****/
+.BotonCarrito {
+    color: black;
+    -webkit-text-stroke: .5px #ffffff;
+}
+
+.BotonCarrito span {
+    font-size: 1.4rem;
+    color: white;
+    padding-left: 4px;
+}
+
+.CerrarCarrito {
+    font-size: 3rem;
+    display: flex!important;
+    justify-content: flex-end;
+    padding: 5px;
+    color: rgb(202, 23, 23);
+    cursor: pointer;
+}
+
+.Carrito {
+    background-color: white;
+    position: fixed;
+    width: 95vw;
+    height: 100vh;
+    top: 0;
+    right: 0rem;
+    z-index: 99;
+    transform: translateX(390px);
+    transition: all 1s;
+}
+
+.CarritoDiv {
+    max-height: 28rem;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+
+.ProductosCarrito {
+    display: grid;
+    grid-template-columns: 47% 50%;
+    gap: 50px;
+    margin: 2rem;
+    padding-bottom: 1.3rem;
+    border-bottom: 1px solid #FF2BE6;
+    position: relative;
+    align-items: center;
+}
+
+.EliminarProducto{
+    position: absolute;
+    font-size: 1.5rem;
+    color: rgb(202, 23, 23);;
+    top: -24px;
+    left: 18rem;
+    cursor: pointer;
+}
+
+
+.ProductosCarrito img{
+    margin-bottom:2rem ;
+    border-radius: 6px;
+}
+
+.BorrarProducto {
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    color: rgb(202, 23, 23);
+}
+
+.CarritoContenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CarritoContenido .ProductoNombre {
+    font-size: 1.5rem;
+}
+
+.CarritoContenido .PrecioProducto {
+    font-size: 1.7rem;
+}
+
+.CarritoContenido .CantidadCarrito {
+    display: block;
+    font-size: 10px;
+    border: 1px solid;
+}
+
+.InformacionCarrito {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -1.5rem;
+}
+.CarritoTotal
+{
+    margin-top: -2rem;
+}
+.VerCarritoDiv
+{
+    text-align: center;
+}
+.verCarrito{
+    color: black;
+    font-size: 2rem;
+}
+
+.SubTotal {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+
+
+@media only screen and (min-width:728px){ 
+    .Carrito {
+        transform: translateX(55rem);
+    }
+
+    .EliminarProerducto{
+        left: 39rem;
+    }
+
+    .CarritoContenido .ProductoNombre {
+        font-size: 3.5rem;
+    }
+    .CarritoContenido .PrecioProducto {
+        font-size: 3.7rem;
+    }
+    .CarritoContenido .CantidadCarrito {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    .CarritoDiv {
+        max-height: 44rem;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    .Carrito {
+        width: 19.3rem;
+        transform: translateX(82rem);
+    }
+
+    .CarritoDiv {
+        max-height: 24rem;
+    }
+
+    .ProductosCarrito {
+        gap: 25px;
+        grid-template-columns: 41% 53%;
+    }
+
+    .CarritoContenido .ProductoNombre {
+        font-size: 1.5rem;
+        margin-top: -5px;
+    }
+    
+    .CarritoContenido .PrecioProducto {
+        font-size: 1.7rem;
+        margin-top: -22px;
+    }
+
+    .CarritoContenido .CantidadCarrito {
+        font-size: .5rem;
+    }
+
+    .EliminarProducto {
+        top: -27px;
+        left: 14rem
+    }
+    
+}
+
+/****** Fin Carrito ******/
+
+
+/****** Mi Cuenta ******/
+.OpcionesCuenta{
+    background-color: #9966cc;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.OpcionesCuenta .Opcion{
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 2px solid #ff00bf;
+    cursor: pointer;
+}
+.Opcion i {
+    font-size: 2rem;
+    color: white;
+    border: 1px solid;
+    padding: 7px;
+    border-radius: 50%;
+}
+.Texto{
+    display: flex;
+    flex-direction: column;
+}
+.Opcion span{
+    font-size: 2rem;
+    padding: 1rem;
+    color: black;
+}
+.Opcion .DatosMas{
+    font-size: 20px;
+    color: rgb(211, 211, 211);
+    margin:  -1rem 0rem;
+}
+
+/*** Direcciones ***/
+.Direcciones{
+    background-color: #9966cc;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.IconoDir{
+    font-size: 1.8rem;
+    padding: 0 1rem;
+}
+.divDireccion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.TextoDireccion{
+    display: flex;
+    align-items: baseline;
+}
+
+.Texto .Calle{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.TextoAbajo{
+    margin-top: -1rem;
+}
+
+.TextoAbajo p{
+    margin: -2px 0rem;
+    color: rgb(211, 211, 211);
+}
+
+.BtnDireccion{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.DireccionAcc{
+    margin-top: 3rem;
+    justify-content: space-between;
+}
+
+.divAgregar{
+    padding: 1rem;
+}
+
+
+/*SobreNosotros Aparte*/
+.SobreNosotrosContenedor h2 {
+    position: relative;
+}
+
+
+.SobreNosotrosh2::before {
+    max-width: 15rem;
+    top: 50px;
+}
+
+.SobreNosotrosInfo img {
+    border-radius: 2rem;
+    transition: ease-in-out all .5s;
+    position: relative;
+}
+
+.ImagenDiv {
+    position: relative;
+}
+
+.ImagenDiv:hover img {
+    transform: scale(1.1);
+    transition: ease-in .5s all;
+}
+
+.ImagenDiv::before {
+    content: '';
+    width: 0%;
+    height: 20.7rem;
+    transition: ease-in .5s all;
+    position: absolute;
+    z-index: 2;
+}
+
+.ImagenDiv:hover::before {
+    content: '';
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.301);
+    position: absolute;
+    width: 100%;
+    height: 20.7rem;
+    transform: scale(1.1);
+    z-index: 2;
+    transition: ease-in .5s all;
+}
+
+.SobreNosotrosInfo p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+@media only screen and (min-width:1024px){
+    .SobreNosotrosInfo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+        align-items: center; 
+}
+
+/*Fin SobreNosotros*/
+
+
+
+
+
+/*Tortas Seccion*/
+
+.ContenedorTortas {
+    background-color: var(--ColorPrincipal);
+    padding: 2rem;
+    -webkit-box-shadow: -1px 5px 26px -1px var(--ColorPrincipal);
+    box-shadow: -1px 5px 26px -1px var(--ColorPrincipal);
+}
+
+.ContenedorTortas .ContenedorProductos h3 {
+    border-bottom: 5px solid #3b5998;
+    color: white;
+}
+
+.ContenedorTortas p {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ordenes de Compras  */
+.divDatos{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px;
+}
+
+.divDatos::before{
+    content: '';
+    width: 31rem;
+    position: absolute;
+    top: 5.5rem;
+    left: 10rem;
+    border-bottom: 2px solid #ff00bf;
+    border-radius: 1px;
+}
+
+.datosCompra{
+    margin: -3px;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.Datos
+{
+    color: black;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.BotonEnlace{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+
+
+/*Carrusel*/
+.RelacionadoProductos {
+    display: block;
+    margin: 5rem;
+}
+
+.Carrusel {
+    position: relative;
+}
+
+.Carrusel i {
+    z-index: 1;
+    font-size: 5rem;
+    color: rgb(160, 157, 157);
+    position: absolute;
+    cursor: pointer;
+    top: 6rem;
+}
+
+.Carrusel i:last-child {
+    left: 72rem;
+}
+
+.RelacionadoProductos .Producto {
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+.RelacionadoProductos .Producto:hover::before {
+    content: '';
+    left: 16px;
+    width: 92%;
+}
+
+
+
+
+/******  CARRITO  ******/
+
+/*Ventana Carrito*/
+.TablaCarrito {
+    border: 1px solid #bdbdbd;
+    margin-bottom: 5rem;
+    border-collapse: collapse;
+}
+
+.TablaCarrito tr th {
+    width: 50rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+.TablaCarrito tbody tr td {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td,
+th {
+    border: 1px solid #bbbaba;
+}
+
+.TablaCarrito .CartImg {
+    width: 40rem;
+    padding-left: .5rem;
+}
+
+.TablaCarrito .CartCant {
+    width: 5rem;
+}
+
+.CartCant input {
+    width: 70%;
+}
+
+.CartBtn .Boton {
+    width: 5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.DivBotonCar {
+    display: flex;
+}
+
+.CartCant .Boton {
+    padding: 0rem;
+    margin: 1rem;
+}
+
+.TablaCarrito img {
+    width: 10rem;
+    height: 5rem;
+    text-align: center;
+}
+
+.SubtotalCar {
+    font-size: 2rem;
+    padding: 0rem 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+.Visible{
+    transform: translateX(0);
+}
+
+
+/* Alertas Categoria */
+
+.alertas{
+    display: flex;
+    justify-content: center;
+}
+
+.alerta{
+    position: fixed;
+    border-radius: 6px;
+    top: 10rem;
+    font-size: 2rem;
+    z-index: 100;
+    color: white;
+    width: 30rem;
+    text-align: center;
+    padding: 0rem 2rem;
+}
+
+.correcto {
+    background-color: green;
+
+}
+
+@keyframes Borde {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}

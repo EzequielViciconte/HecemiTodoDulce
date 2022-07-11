@@ -1,0 +1,36 @@
+extends layout
+
+block Contenido
+
+    if locals.mensajes
+        .alertas
+            each  categoria in Object.keys(locals.mensajes)
+                each error in mensajes[categoria]
+                    .alerta(class=`${categoria}`)
+                        p=error
+    section.OrdenCompra 
+        h2 Orden de Compra
+        .default-form
+            .divDatos
+                p.datosCompra Nombre Del Comprador: 
+                p.Datos=order.Nombre  
+            .divDatos        
+                p.datosCompra Email del comprador: 
+                p.Datos= order.email
+            .divDatos        
+                p.datosCompra ID de la compra: 
+                p.Datos=order. Payment_id 
+            .divDatos       
+                p.datosCompra Estado del Pago: 
+                p.Datos=order.Status 
+            .divDatos
+                p.datosCompra Tipo de Pago: 
+                p.Datos=order.Payment_type 
+
+            a.BotonEnlace(href="/") 
+                button.Boton#Comprar
+                    span  Volver Al Home 
+            
+
+        
+

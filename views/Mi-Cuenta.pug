@@ -1,0 +1,40 @@
+extends layout
+
+block Contenido
+    section.MiCuenta 
+        h2  Mi Cuenta
+        
+        .OpcionesCuenta
+            a(href="/Mis-Datos") 
+                .Opcion 
+                    .Icono
+                        i(class="fa-solid fa-user ")
+                    .Texto 
+                        span Mis datos
+                        span.DatosMas Configura tus Datos Personales
+                
+            a(href="/Direcciones") 
+                .Opcion 
+                    .Icono
+                        i(class="fa-solid fa-location-dot")
+                    .Texto 
+                        span Direccion
+                        span.DatosMas Configura tus Direcciones
+
+            a(href="/Ordenes") 
+                .Opcion 
+                    .Icono
+                        i(class="fa-solid fa-list-check")
+                    .Texto 
+                        span Ordenes
+                        span.DatosMas Configura tus Direcciones
+            a(href="/Mis-Tarjetas") 
+                .Opcion 
+                    .Icono
+                        i(class="fa-regular fa-credit-card")
+                    .Texto 
+                        span Mis tarjetas
+                        span.DatosMas Configura tus medios de pago
+
+ 
+

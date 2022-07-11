@@ -1,0 +1,30 @@
+extends layout
+
+block Contenido
+    section.MiCuenta 
+        h2  Mis Tarjetas
+        
+        .Direcciones
+            .divDireccion
+                .TextoDireccion 
+                    .IconoDir 
+                        i(class="fa-solid fa-house")
+                    .Texto 
+                        p.Calle Presidente peron 775
+                        .TextoAbajo
+                            p Codigo postal 1631 - Buenos Aires - Villa Rosa
+                            p Juanpablo Viciconte - 1123191617
+                .BtnDireccion 
+                    a(href="Editar") 
+                        button.Boton(name='Editar' type='submit' value='Editar')
+                            span Editar
+                    a(href="#") 
+                        button.Boton(name='Eliminar' type='submit' value='Eliminar')
+                            span Eliminar
+            .divAgregar 
+                a(href="#") 
+                    button.Boton(name='Eliminar' type='submit' value='Eliminar')
+                        span Agregar Direccion
+
+    
+

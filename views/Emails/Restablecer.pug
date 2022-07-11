@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style 
+            include ./email.css
+    body 
+    h2 Reestableccer Password 
+    p Hola,Usted a solicitado para Resetear Tu Contraseña,haz click en el siguiente enlace.Este se vencera una ves que sea solicitado.
+    a(href=`${ResetUrl}`) Ir a reset el Password
+    p Si no podes acceder a este enlace ,visita #{ResetUrl}
+    p Si no  solicitaste este Mail podes Ignorarlo 

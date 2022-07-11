@@ -1,0 +1,37 @@
+extends layout
+
+block Contenido
+    section.Contacto
+        h2 Tu Carrito
+    table.TablaCarrito.Contenedor
+        thead
+            tr
+            th.CartImg Imagen
+            th Titulo
+            th Precio
+            th.CartCant Cantidad
+            th
+            th Total
+        tbody
+           
+        tfoot
+            tr
+            td.SubtotalCar(align='right' colspan='5')
+                h3 Total
+            td#Total.SubtotalCar(align='right')
+                h3 $0
+            td
+
+    //- .formasPago
+    //-     form(action="/checkout" method="POST")
+    //-         button.Boton#Comprar 
+    //-             span Pagar con MercadoPago 
+    .Acciones
+        a(href="/Tienda") 
+            button.Boton#Comprar
+                span Seguir Comprando 
+        a(href="/DatosCompra") 
+            button.Boton
+                span Ir a Datos del cliente
+
+        
